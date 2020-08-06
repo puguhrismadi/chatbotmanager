@@ -172,6 +172,14 @@ class Presensi_model extends CI_Model {
     }
     public function getKelasGuru(){
         //output yg di mau daftar kelas guru ajar
+        $this->db->select('nama_kelas');
+       
+        $query=$this->db->get('api_kelas');
+        //$query =$this->db->query("SELECT m.kode_mapel_ajar,m.id_kelas,k.nama_kelas FROM mapel_enrol_kelas m JOIN api_kelas k WHERE k.idkelas=m.id_kelas AND m.kode_mapel_ajar LIKE '%40%'");
+        return $query->result();
+    }
+    public function getKelasGuruLama(){
+        //output yg di mau daftar kelas guru ajar
         $query =$this->db->query("SELECT m.kode_mapel_ajar,m.id_kelas,k.nama_kelas FROM mapel_enrol_kelas m JOIN api_kelas k WHERE k.idkelas=m.id_kelas AND m.kode_mapel_ajar LIKE '%40%'");
         return $query->result();
     }

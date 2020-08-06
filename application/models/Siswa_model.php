@@ -206,7 +206,7 @@ class Siswa_model extends CI_Model {
         $this->db->from("api_siswa");
         $this->db->join('api_telegram_siswa',"api_telegram_siswa.nipd=api_siswa.nipd");
         $this->db->where("api_siswa.kelas",$kelas);
-        $this->db->order_by('api_siswa.idsiswa');
+        $this->db->order_by('api_siswa.nipd');
         return $this->db->get();
     }
     public function getSiswaKelasByNamaKelas($kelas){

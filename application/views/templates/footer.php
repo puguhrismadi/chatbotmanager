@@ -1,3 +1,5 @@
+<?php print_r($user);?>
+
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
             	<div class="container my-auto">
